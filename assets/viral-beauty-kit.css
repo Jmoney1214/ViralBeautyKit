@@ -72,3 +72,21 @@ body {
   .header__primary-nav .header__primary-nav-item{ white-space:nowrap !important; }
   .header__logo img{ max-width:170px !important; height:auto; }
 }
+/* --- Subheader (under main nav) --- */
+.vbk-subnav{
+  display:flex; justify-content:center; align-items:center;
+  gap:18px; padding:10px 0; flex-wrap:nowrap;
+}
+.vbk-subnav__link{
+  font-weight:600; font-size:14px; letter-spacing:.01em;
+  color:#2a2a2a; text-decoration:none;
+}
+.vbk-subnav__link:hover{ color:var(--color-primary, #000); }
+@media (min-width:1000px) and (max-width:1200px){
+  .vbk-subnav{ gap:14px; }
+  .vbk-subnav__link{ font-size:13.5px; }
+}
+@media (max-width:999px){
+  .vbk-subnav{ overflow-x:auto; gap:14px; padding:8px 0; }
+  .vbk-subnav::-webkit-scrollbar{ display:none; }
+}
