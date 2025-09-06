@@ -1,7 +1,7 @@
 <section class="bg-white">
   <div class="container mx-auto">
       <div class="flex flex-col md:flex-row items-center">
-          <div class="w-full md:w-1/2 bg-primary text-white flex flex-col justify-center text-left p-8 sm:p-12 lg:p-20 h-[50vh] md:h-auto min-h-[450px]">
+          <div class="w-full md:w-1/2 bg-primary text-white flex flex-col justify-center text-left p-8 sm:p-12 lg:p-20 h-[50vh] md:h-[80vh] min-h-[450px] min-h-[450px]">
               <h2 class="text-sm font-bold tracking-widest uppercase">{{ section.settings.subheading }}</h2>
               <h1 class="text-5xl lg:text-7xl font-black my-4 leading-none">{{ section.settings.heading }}</h1>
               <p class="text-lg mb-8">{{ section.settings.text }}</p>
@@ -11,7 +11,7 @@
                 </a>
               {% endif %}
           </div>
-          <div class="w-full md:w-1/2 h-[50vh] md:h-[80vh] min-h-[450px]">
+          <div class="w-full md:w-1/2 h-[50vh] md:h-[80vh] min-h-[450px] min-h-[450px]">
               {% if section.settings.image != blank %}
                 <img 
                   src="{{ section.settings.image | image_url: width: 1200 }}" 

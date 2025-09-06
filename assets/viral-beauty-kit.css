@@ -53,3 +53,17 @@ body {
   .header__primary-nav .header__primary-nav-item{ white-space:nowrap !important; }
   .header__logo img{ max-width:170px !important; height:auto; }
 }
+@media (min-width: 1000px){
+  .header{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) !important;
+    grid-template-areas:"primary logo secondary" !important;
+    align-items:center !important;
+  }
+  .header__primary-nav{ grid-area:primary !important; justify-self:start !important; }
+  .header__logo{ grid-area:logo !important; justify-self:center !important; }
+  .header__secondary-nav{ grid-area:secondary !important; justify-self:end !important; }
+  .header__primary-nav ul{ display:flex !important; flex-wrap:nowrap !important; gap:14px !important; justify-content:center !important; }
+  .header__primary-nav .header__primary-nav-item{ white-space:nowrap !important; }
+  .header__logo img{ max-width:170px !important; height:auto; }
+}
