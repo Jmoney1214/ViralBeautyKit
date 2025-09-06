@@ -1,0 +1,17 @@
+name: CI
+on:
+  push: { branches: ['**'] }
+  pull_request: { branches: ['**'] }
+  workflow_dispatch: {}
+permissions: { contents: read }
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify theme files present
+        run: |
+          test -f layout/theme.liquid || (echo "layout/theme.liquid missing" && exit 1)
+          test -f assets/viral-beauty-kit.css || (echo "assets/viral-beauty-kit.css missing" && exit 1)
+          test -f sections/vbk-header.liquid || (echo "sections/vbk-header.liquid missing" && exit 1)
+          test -f sections/vbk-hero.liquid || (echo "sections/vbk-hero.liquid missing" && exit 1)
