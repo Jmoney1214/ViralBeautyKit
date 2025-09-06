@@ -42,3 +42,4 @@ config/settings_data.json
 .vercel/
 .netlify/
 .turbo/
+.DS_Store
