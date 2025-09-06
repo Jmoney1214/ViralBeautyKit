@@ -9,20 +9,67 @@
  */
 {
   "sections": {
-    "hero": {
-      "type": "vbk-hero",
-      "settings": {}
-    },
-    "featured_collection": {
-      "type": "vbk-featured-collection",
-      "settings": {
-        "title": "Shop Best Sellers",
-        "collection": "frontpage"
-      }
+    "panels": {
+      "type": "category-panels-amz",
+      "blocks": {
+        "p1": {
+          "type": "panel",
+          "settings": {
+            "heading": "Trending: Fall Beauty",
+            "cta_label": "Shop more beauty",
+            "cta_url": "",
+            "label_1": "Wellness",
+            "url_1": "",
+            "label_2": "Cleaning supplies",
+            "url_2": "",
+            "label_3": "Fall flavors",
+            "url_3": "",
+            "label_4": "All deals",
+            "url_4": ""
+          }
+        },
+        "p2": {
+          "type": "panel",
+          "settings": {
+            "heading": "Discover Everyday Essentials",
+            "cta_label": "Shop more everyday essentials",
+            "cta_url": "",
+            "label_1": "Wellness",
+            "url_1": "",
+            "label_2": "Cleaning supplies",
+            "url_2": "",
+            "label_3": "Fall flavors",
+            "url_3": "",
+            "label_4": "All deals",
+            "url_4": ""
+          }
+        },
+        "p3": {
+          "type": "panel",
+          "settings": {
+            "heading": "Shop gift cards under $50",
+            "cta_label": "Shop gift cards",
+            "cta_url": "",
+            "label_1": "Wellness",
+            "url_1": "",
+            "label_2": "Cleaning supplies",
+            "url_2": "",
+            "label_3": "Fall flavors",
+            "url_3": "",
+            "label_4": "All deals",
+            "url_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {"overlap_hero": true, "overlap_amount": 64, "overlap_amount_mobile": 56}
     }
   },
   "order": [
-    "hero",
-    "featured_collection"
+    "panels"
   ]
 }

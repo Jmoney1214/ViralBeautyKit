@@ -1,5 +1,9 @@
-/* Filename: viral-beauty-kit.js | Folder: assets */
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Lucide icons if they don't render automatically
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+
     // Mobile menu toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -22,21 +26,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Interactive Cart (Placeholder Functionality)
-    const cartCountElement = document.getElementById('cart-count');
+    // NOTE: The cart count is now handled by Shopify's {{ cart.item_count }}
+    // The "Quick Add" functionality will require more advanced JavaScript
+    // to interact with Shopify's Cart API. The code below is a placeholder
+    // for visual feedback but does not add to the actual Shopify cart.
+    
     const quickAddButtons = document.querySelectorAll('.quick-add');
-    let cartItemCount = cartCountElement ? parseInt(cartCountElement.textContent, 10) : 0; // In a real theme, this would come from the cart object
+    
+    quickAddButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Provide visual feedback
+            const originalText = button.textContent;
+            button.textContent = 'Added!';
+            button.classList.add('bg-accent');
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('bg-accent');
+            }, 1500);
 
-    if (cartCountElement && quickAddButtons.length) {
-        quickAddButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                cartItemCount++;
-                cartCountElement.textContent = cartItemCount;
-                cartCountElement.classList.add('cart-count-updated');
-                setTimeout(() => {
-                    cartCountElement.classList.remove('cart-count-updated');
-                }, 500);
-            });
+            // To make this functional, you would add an AJAX API call here
+            // to add the product variant to the cart, then update the cart count.
+            // Example:
+            //
+            // let formData = {
+            //  'items': [{
+            //   'id': VARIANT_ID_HERE,
+            //   'quantity': 1
+            //  }]
+            // };
+            //
+            // fetch('/cart/add.js', {
+            //   method: 'POST',
+            //   headers: { 'Content-Type': 'application/json' },
+            //   body: JSON.stringify(formData)
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //   // Update cart count display
+            //   document.getElementById('cart-count').textContent = data.item_count;
+            // })
+            // .catch((error) => {
+            //   console.error('Error:', error);
+            // });
         });
-    }
+    });
 });
