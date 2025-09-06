@@ -55,6 +55,10 @@
       "next_slide": "Slide right",
       "previous_slide": "Slide left",
       "name": "Slider"
+    },
+    "meta": {
+      "tags": "Tagged {{ tags }}",
+      "page": "Page {{ page }}"
     }
   },
   "newsletter": {

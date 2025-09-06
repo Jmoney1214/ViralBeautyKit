@@ -20,11 +20,11 @@
   {% endif %}
 
   <!-- Tailwind CSS and Fonts -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
   {{ content_for_header }}
 
@@ -32,7 +32,7 @@
   {{ 'viral-beauty-kit.css' | asset_url | stylesheet_tag }}
 </head>
 
-<body>
+<body class="text-gray-900">
   
   {% section 'vbk-header' %}
 
@@ -44,6 +44,12 @@
 
   <!-- Link to your custom JS file -->
   <script src="{{ 'viral-beauty-kit.js' | asset_url }}" defer="defer"></script>
+
+  <script>
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+  </script>
 
 </body>
 </html>

@@ -1,0 +1,20 @@
+<section class="vbk-marquee color-scheme color-scheme--scheme-1">
+  <div class="vbk-marquee__viewport">
+    <div class="vbk-marquee__track" style="--vbk-marquee-speed: {{ section.settings.speed | default: 20 }}s">
+      {% for i in (1..2) %}{% for block in section.blocks %}
+        <div class="vbk-marquee__item" {{ block.shopify_attributes }}>
+          {% if block.settings.icon %}<img class="vbk-marquee__icon" src="{{ block.settings.icon | img_url: '60x' }}" width="28" height="28" alt="">{% endif %}
+          {% if block.settings.label %}<span class="vbk-marquee__label heading">{{ block.settings.label }}</span>{% endif %}
+        </div>
+      {% endfor %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{ "name":"VBK — Marquee Badges",
+  "settings":[{"type":"range","id":"speed","label":"Scroll duration (seconds)","min":10,"max":60,"step":1,"default":20}],
+  "blocks":[{"type":"badge","name":"Badge","settings":[
+    {"type":"image_picker","id":"icon","label":"Icon"},
+    {"type":"text","id":"label","label":"Label","default":"CLEAN & CRUELTY FREE"}]}],
+  "presets":[{"name":"VBK — Marquee Badges"}] }
+{% endschema %}
