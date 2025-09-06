@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero-prime",
+      "settings": {}
+    },
+    "usp": {
+      "type": "usp-bar",
+      "blocks": {
+        "u1": {
+          "type": "usp",
+          "settings": {}
+        },
+        "u2": {
+          "type": "usp",
+          "settings": {}
+        },
+        "u3": {
+          "type": "usp",
+          "settings": {}
+        },
+        "u4": {
+          "type": "usp",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4"
+      ],
+      "settings": {}
+    },
+    "bundles": {
+      "type": "bundle-offers",
+      "blocks": {
+        "b1": {
+          "type": "bundle",
+          "settings": {}
+        },
+        "b2": {
+          "type": "bundle",
+          "settings": {}
+        },
+        "b3": {
+          "type": "bundle",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "settings": {}
+    },
+    "panels": {
+      "type": "category-panels-amz",
+      "blocks": {
+        "p1": { "type": "panel", "settings": {} },
+        "p2": { "type": "panel", "settings": {} },
+        "p3": { "type": "panel", "settings": {} }
+      },
+      "block_order": ["p1","p2","p3"],
+      "settings": {"overlap_hero": true, "overlap_amount": 64, "overlap_amount_mobile": 56}
+    }
+  },
+  "order": [
+    "hero",
+    "usp",
+    "panels",
+    "bundles"
+  ]
+}

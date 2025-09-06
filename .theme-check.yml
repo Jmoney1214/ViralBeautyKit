@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+MatchingTranslations:
+  enabled: false
+TemplateLength:
+  enabled: false
+=======
 root: .
 include_categories: theme, liquid
 exclude_patterns:
@@ -7,3 +13,4 @@ exclude_patterns:
   - "snippets/.gitkeep"
   - "assets/.gitkeep"
   - "config/.gitkeep"
+>>>>>>> main

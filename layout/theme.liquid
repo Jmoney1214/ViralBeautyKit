@@ -1,46 +1,54 @@
 <!doctype html>
-<html class="js" lang="{{ request.locale.iso_code }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="">
-    <link rel="canonical" href="{{ canonical_url }}">
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
-    {%- if settings.favicon != blank -%}
-      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-    {%- endif -%}
+  <title>
+    {{ page_title }}
+    {%- if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif -%}
+    {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  </title>
 
-    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-    {%- endunless -%}
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
 
-    <title>
-      {{ page_title }}
-      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-    </title>
+  <!-- Tailwind CSS and Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
+  {{ content_for_header }}
 
-    {% render 'meta-tags' %}
+  <!-- Link to your custom CSS file -->
+  {{ 'viral-beauty-kit.css' | asset_url | stylesheet_tag }}
+</head>
 
-    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+<body>
+  
+  {% section 'vbk-header' %}
 
-    {%- if settings.animations_reveal_on_scroll -%}
-      <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}
+  <main role="main" id="MainContent">
+    {{ content_for_layout }}
+  </main>
 
-    {{ content_for_header }}
+  {% section 'vbk-footer' %}
 
+<<<<<<< HEAD
+  <!-- Link to your custom JS file -->
+  <script src="{{ 'viral-beauty-kit.js' | asset_url }}" defer="defer"></script>
+
+</body>
+</html>
+=======
     {{ 'viral-beauty-kit.css' | asset_url | stylesheet_tag }}
 
     {%- liquid
@@ -379,3 +387,4 @@
     {%- endif -%}
   </body>
 </html>
+>>>>>>> main
