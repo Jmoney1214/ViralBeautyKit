@@ -1,0 +1,18 @@
+{%- comment -%} Basic meta tags to satisfy layout render {%- endcomment -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>
+  {{ page_title | escape }}
+  {%- if current_tags %} – {{ current_tags | join: ', ' | escape }}{%- endif -%}
+  {%- if current_page and current_page != 1 %} – Page {{ current_page }}{%- endif -%}
+  {%- if shop.name %} – {{ shop.name | escape }}{%- endif -%}
+</title>
+<link rel="canonical" href="{{ canonical_url }}">
+{%- if settings.favicon != blank -%}
+  <link rel="icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+{%- endif -%}
+<meta property="og:site_name" content="{{ shop.name | escape }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:type" content="{% if template.name == 'product' %}product{% elsif template.name == 'article' %}article{% else %}website{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
