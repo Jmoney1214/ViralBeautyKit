@@ -1,0 +1,9 @@
+root: .
+include_categories: theme, liquid
+exclude_patterns:
+  - "node_modules/**"
+  - "templates/.gitkeep"
+  - "sections/.gitkeep"
+  - "snippets/.gitkeep"
+  - "assets/.gitkeep"
+  - "config/.gitkeep"
