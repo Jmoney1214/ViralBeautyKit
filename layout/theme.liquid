@@ -41,6 +41,8 @@
 
     {{ content_for_header }}
 
+    {{ 'viral-beauty-kit.css' | asset_url | stylesheet_tag }}
+
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
@@ -290,6 +292,8 @@
         onload="this.media='all'"
       >
     {%- endif -%}
+
+    <script src="{{ 'viral-beauty-kit.js' | asset_url }}" defer="defer"></script>
 
     <script>
       if (Shopify.designMode) {
