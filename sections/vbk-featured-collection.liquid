@@ -1,0 +1,50 @@
+{% comment %} Filename: vbk-featured-collection.liquid | Folder: sections {% endcomment %}
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+     <h2 class="text-3xl font-bold text-center mb-10">{{ section.settings.title }}</h2>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {%- assign collection = collections[section.settings.collection] -%}
+        {% if collection and collection.products_count > 0 %}
+          {% for product in collection.products limit: 4 %}
+            <div class="bg-white rounded-lg overflow-hidden group text-center product-card">
+              <div class="relative">
+                <a href="{{ product.url }}">
+                  {% if product.featured_image %}
+                    <img 
+                      src="{{ product.featured_image | image_url: width: 400 }}" 
+                      alt="{{ product.featured_image.alt | escape }}" 
+                      class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                      width="400"
+                      height="400"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <div class="w-full h-64 bg-gray-200"></div>
+                  {% endif %}
+                </a>
+                <button class="quick-add absolute bottom-4 left-1/2 -translate-x-1/2 w-4/5 bg-white text-gray-900 font-bold py-3 rounded-md opacity-0 group-hover:opacity-100" data-product-id="{{ product.variants.first.id }}">Quick Add</button>
+              </div>
+              <div class="p-6">
+                  <h3 class="font-semibold text-lg mb-1"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+                  <p class="text-gray-900 font-bold text-lg">{{ product.price | money }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          {% for i in (1..4) %}
+            <div class="bg-white rounded-lg overflow-hidden group text-center"><div class="relative"><div class="w-full h-64 bg-gray-200"></div></div><div class="p-6"><div class="h-6 bg-gray-200 rounded w-3/4 mx-auto mb-2"></div><div class="h-6 bg-gray-200 rounded w-1/4 mx-auto"></div></div></div>
+          {% endfor %}
+        {% endif %}
+     </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Section Title", "default": "Shop Best Sellers" },
+    { "type": "collection", "id": "collection", "label": "Select Collection" }
+  ],
+  "presets": [{ "name": "Featured Collection" }]
+}
+{% endschema %}

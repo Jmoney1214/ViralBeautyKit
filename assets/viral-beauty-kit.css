@@ -1,0 +1,23 @@
+/* Filename: viral-beauty-kit.css | Folder: assets */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF; /* Clean white background */
+}
+.text-primary { color: #D946EF; } /* Fuchsia */
+.bg-primary { background-color: #D946EF; }
+.hover\:bg-primary-dark:hover { background-color: #c026d3; }
+.border-primary { border-color: #D946EF; }
+.ring-primary { --tw-ring-color: #D946EF; }
+
+.text-accent { color: #BEF264; } /* Lime Green */
+.bg-accent { background-color: #BEF264; }
+.hover\:bg-accent-dark:hover { background-color: #a3e635; }
+.font-black { font-weight: 900; }
+
+.cart-count-updated {
+    animation: bounce 0.5s ease;
+}
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
