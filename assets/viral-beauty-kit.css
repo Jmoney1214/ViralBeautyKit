@@ -27,6 +27,11 @@ body {
 @media (min-width: 1024px) {
   .vbk-logo-wrap { left: auto; transform: none; margin-left: auto; margin-right: auto; }
 }
+/* Keep subnav items on one line and centered */
+@media (min-width: 1024px) {
+  .vbk-subnav { flex-wrap: nowrap; gap: 24px; }
+  .vbk-subnav a { white-space: nowrap; }
+}
 
 /* Center header grid override removed to avoid conflicts with theme header */
 
