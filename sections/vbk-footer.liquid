@@ -1,0 +1,33 @@
+{% comment %} Filename: vbk-footer.liquid | Folder: sections {% endcomment %}
+<footer class="bg-gray-900 text-white">
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <h4 class="font-bold text-lg mb-4">Shop</h4>
+                <ul>
+                    <li class="mb-2"><a href="{{ routes.all_products_collection_url }}" class="text-gray-400 hover:text-white transition">All Products</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Support</h4>
+                <ul>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Company</h4>
+                 <ul>
+                    <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+            &copy; {{ 'now' | date: "%Y" }} ViralBeautyKit. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+{% schema %}{ "name": "Footer", "settings": [] }{% endschema %}

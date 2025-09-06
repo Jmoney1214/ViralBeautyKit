@@ -1,0 +1,48 @@
+{% comment %} Filename: vbk-header.liquid | Folder: snippets {% endcomment %}
+<header id="header" class="bg-white sticky top-0 z-50 transition-shadow duration-300">
+    <div class="bg-accent text-gray-900 text-center p-2 text-sm font-bold tracking-wide">
+        FREE SAMPLES WITH ALL ORDERS
+    </div>
+    <div class="container mx-auto px-6">
+        <div class="relative flex items-center justify-between h-16">
+            <div class="flex-1 flex items-center justify-start">
+                 <button id="mobile-menu-button" class="lg:hidden p-2 -ml-2">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+            <div class="absolute inset-y-0 left-0 flex items-center lg:static lg:inset-auto lg:ml-0 lg:pr-0" style="left: 50%; transform: translateX(-50%);">
+                <a href="/" class="text-3xl font-extrabold tracking-tight text-gray-900">
+                    ViralBeauty<span class="text-primary">Kit</span>®
+                </a>
+            </div>
+            <div class="flex-1 flex items-center justify-end space-x-4">
+                <a href="{{ routes.search_url }}" class="text-gray-600 hover:text-primary transition hidden sm:inline-block"><i data-lucide="search" class="h-5 w-5"></i></a>
+                <a href="{{ routes.account_url }}" class="text-gray-600 hover:text-primary transition hidden sm:inline-block"><i data-lucide="user" class="h-5 w-5"></i></a>
+                <a href="{{ routes.cart_url }}" class="relative text-gray-600 hover:text-primary transition">
+                    <i data-lucide="shopping-bag" class="h-5 w-5"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-accent text-gray-900 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">{{ cart.item_count }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <nav class="hidden lg:block border-t border-b border-gray-200">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-center space-x-8 py-3">
+                {% if linklists['main-menu'] and linklists['main-menu'].links.size > 0 %}
+                  {%- for link in linklists['main-menu'].links -%}
+                      <a href="{{ link.url }}" class="text-gray-700 font-semibold hover:text-primary transition text-sm">{{ link.title }}</a>
+                  {%- endfor -%}
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden" aria-labelledby="mobile-menu-button">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
+            {% if linklists['main-menu'] and linklists['main-menu'].links.size > 0 %}
+              {%- for link in linklists['main-menu'].links -%}
+                  <a href="{{ link.url }}" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">{{ link.title }}</a>
+              {%- endfor -%}
+            {% endif %}
+        </div>
+    </div>
+</header>
