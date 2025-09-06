@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
-flag="--unpublished"
 store=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --live) flag="--live"; shift ;;
     --store) store="$2"; shift 2 ;;
     *) shift ;;
   esac
@@ -13,4 +11,4 @@ if [[ -z "$store" ]]; then
   read -r -p "Shopify store domain (e.g. mystore.myshopify.com): " store
 fi
 if [[ -z "${store}" ]]; then echo "Missing store"; exit 1; fi
-shopify theme push "$flag" --store "$store" --path . --ignore "node_modules/*" --ignore ".git/*" --ignore ".github/*" --ignore ".theme-check.yml"
+shopify theme list --store "$store" | awk '/unpublished/ {print $1}'

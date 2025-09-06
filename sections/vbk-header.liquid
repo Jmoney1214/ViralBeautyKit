@@ -36,60 +36,33 @@
 
     <!-- Sub Navigation -->
     <nav class="hidden lg:block border-t border-b border-gray-200">
-        <div class="container mx-auto px-6">
-            <div class="flex items-center justify-center space-x-8 py-3">
-<<<<<<< HEAD
-                <a href="/collections/all" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Shop All</a>
-                <a href="/collections/skincare-tools" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Skincare Tools <i data-lucide="chevron-down" class="h-4 w-4 ml-1"></i></a>
-                <a href="/collections/hair-care" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Hair Care <i data-lucide="chevron-down" class="h-4 w-4 ml-1"></i></a>
-                <a href="/collections/kits-sets" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Kits & Sets</a>
-                <a href="#best-sellers" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Best Sellers</a>
-                <a href="/collections/sale" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Sale</a>
-            </div>
-            <div class="text-center pb-3">
-                 <a href="#" class="text-gray-700 font-semibold hover:text-primary transition text-sm">Rewards</a>
-=======
-                {%- for link in linklists.main-menu.links -%}
-                    <a href="{{ link.url }}" class="text-gray-700 font-semibold hover:text-primary transition text-sm">{{ link.title }}</a>
-                {%- endfor -%}
->>>>>>> main
-            </div>
+      <div class="container mx-auto px-6">
+        <div class="vbk-subnav flex items-center justify-center space-x-8 py-3">
+          <a href="/collections/all" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Shop All</a>
+          <a href="/collections/skincare-tools" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Skincare Tools <i data-lucide="chevron-down" class="h-4 w-4 ml-1"></i></a>
+          <a href="/collections/hair-care" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Hair Care <i data-lucide="chevron-down" class="h-4 w-4 ml-1"></i></a>
+          <a href="/collections/kits-sets" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Kits & Sets</a>
+          <a href="#best-sellers" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Best Sellers</a>
+          <a href="/collections/sale" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Sale</a>
+          <a href="/pages/rewards" class="text-gray-700 font-semibold hover:text-primary transition text-sm flex items-center">Rewards</a>
         </div>
+      </div>
     </nav>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden lg:hidden" aria-labelledby="mobile-menu-button">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
-<<<<<<< HEAD
-            <a href="/collections/all" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Shop All</a>
-            <a href="/collections/skincare-tools" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Skincare Tools</a>
-            <a href="/collections/hair-care" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Hair Care</a>
-            <a href="/collections/kits-sets" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Kits & Sets</a>
-            <a href="#best-sellers" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Best Sellers</a>
-            <a href="/collections/sale" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Sale</a>
-            <a href="#" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Rewards</a>
-        </div>
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t">
+        <a href="/collections/all" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Shop All</a>
+        <a href="/collections/skincare-tools" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Skincare Tools</a>
+        <a href="/collections/hair-care" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Hair Care</a>
+        <a href="/collections/kits-sets" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Kits & Sets</a>
+        <a href="#best-sellers" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Best Sellers</a>
+        <a href="/collections/sale" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Sale</a>
+        <a href="/pages/rewards" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">Rewards</a>
+      </div>
     </div>
 </header>
 
 {% schema %}
-{
-  "name": "VBK Header",
-  "settings": [],
-  "presets": [
-    {
-      "name": "VBK Header"
-    }
-  ]
-}
-=======
-            {%- for link in linklists.main-menu.links -%}
-                <a href="{{ link.url }}" class="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium">{{ link.title }}</a>
-            {%- endfor -%}
-        </div>
-    </div>
-</header>
-{% schema %}
-{ "name": "Header", "settings": [] }
->>>>>>> main
+{ "name": "VBK Header", "settings": [], "presets":[{"name":"VBK Header"}] }
 {% endschema %}
