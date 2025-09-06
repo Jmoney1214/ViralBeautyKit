@@ -1,0 +1,32 @@
+<section class="vbk-iwt color-scheme color-scheme--scheme-1">
+  <div class="vbk-iwt__inner {% if section.settings.layout == 'image_right' %}vbk-iwt--reverse{% endif %}">
+    <div class="vbk-iwt__visual">
+      {% if section.settings.image %}
+        <img class="vbk-iwt__img" width="1440" height="1028" decoding="async" loading="lazy"
+             src="{{ section.settings.image | img_url: 'master' }}"
+             alt="{{ section.settings.heading | default: shop.name | escape }}">
+      {% endif %}
+    </div>
+    <div class="vbk-iwt__copy">
+      {% if section.settings.kicker %}<p class="vbk-iwt__kicker">{{ section.settings.kicker }}</p>{% endif %}
+      {% if section.settings.heading %}<h2 class="vbk-iwt__headline">{{ section.settings.heading }}</h2>{% endif %}
+      {% if section.settings.body %}<p class="vbk-iwt__text">{{ section.settings.body }}</p>{% endif %}
+      {% if section.settings.button_label %}
+        <a href="{{ section.settings.button_link | default: routes.all_products_collection_url }}" class="vbk-iwt__cta btn" aria-label="{{ section.settings.button_label | escape }}">{{ section.settings.button_label }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{ "name":"VBK — Image with Text",
+  "settings":[
+    {"type":"image_picker","id":"image","label":"Image"},
+    {"type":"text","id":"kicker","label":"Subheading","default":"Get Filter-Level Flawless IRL"},
+    {"type":"text","id":"heading","label":"Heading","default":"Puff, set, slay!"},
+    {"type":"text","id":"body","label":"Body","default":"The double-sided tool that sets the bar for setting—and resetting—makeup."},
+    {"type":"text","id":"button_label","label":"Button label","default":"Shop Now"},
+    {"type":"url","id":"button_link","label":"Button link"},
+    {"type":"select","id":"layout","label":"Layout","default":"image_left",
+      "options":[{"value":"image_left","label":"Image left, copy right"},{"value":"image_right","label":"Image right, copy left"}]}],
+  "presets":[{"name":"VBK — Image with Text"}] }
+{% endschema %}
