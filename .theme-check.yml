@@ -7,3 +7,7 @@ exclude_patterns:
   - "snippets/.gitkeep"
   - "assets/.gitkeep"
   - "config/.gitkeep"
+checks:
+  DeprecatedFilter:
+    enabled: true
+    severity: warning
