@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "general": {
     "password_page": {
       "login_form_heading": "Enter store using password:",
@@ -529,3 +530,14 @@
     }
   }
 }
+=======
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "refresh_page": "Page refreshed.",
+    "link_messages": {
+      "new_window": "Opens in a new window."
+    }
+  }
+}
+
+>>>>>>> main

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -82,3 +83,50 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+=======
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Simple Shopify theme push helper
+# Usage:
+#   SHOPIFY_STORE=f83av4-0j.myshopify.com ./scripts/theme-push.sh       # draft push
+#   SHOPIFY_STORE=f83av4-0j.myshopify.com ./scripts/theme-push.sh --live # publish live
+
+STORE="${SHOPIFY_STORE:-}"
+if [[ -z "${STORE}" ]]; then
+  echo "Set SHOPIFY_STORE (e.g., f83av4-0j.myshopify.com)" >&2
+  exit 1
+fi
+
+LIVE_FLAG="--unpublished"
+if [[ "${1:-}" == "--live" ]]; then
+  LIVE_FLAG="--live"
+fi
+
+echo "Pushing theme to ${STORE} (${LIVE_FLAG})..."
+shopify theme push --store "${STORE}" ${LIVE_FLAG}
+echo "Done."
+
+# Shopify theme specifics (do not commit store data)
+config/settings_data.json
+.env
+.env.*
+
+# Editor junk
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+
+# Certs/keys
+*.pem
+*.key
+*.crt
+
+# Hosting/tooling (optional)
+.vercel/
+.netlify/
+.turbo/
+.DS_Store
+>>>>>>> main

@@ -12,5 +12,6 @@
     "editor.formatOnSave": true
   },
   "themeCheck.checkOnSave": true,
-  "actions-shell-scripts.runButtonEnabled": true
+  "actions-shell-scripts.runButtonEnabled": true,
+  "github-actions.workflows.pinned.workflows": []
 }
